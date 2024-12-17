@@ -47,6 +47,10 @@ CREATE TABLE employees (
 LOAD DATA LOCAL INFILE 'var/lib/mysql/bartholomew-ch01.csv' INTO TABLE employees FIELDS TERMINATED BY ',';
 ```
 
+## GitHub data for the book
+
+- [Link to GitHub repo where the zipped CSV files are stored](https://github.com/Apress/mariadb-and-mysql-common-table-expressions-and-window-functions-revealed/blob/master/bartholomew-ch01_code.zip)
+
 ## Local install of the _mysql-client_ client
 
 "It is possible to connect to the MySQL server outside the container, as well. For example, to connect from your host machine, you can install the MySQL client manually in your system."
