@@ -2,6 +2,8 @@
 
 Rather than installing MySQL, decided to use Docker. Followed the instructions given here in a [Datacamp tutorial](https://www.datacamp.com/tutorial/set-up-and-configure-mysql-in-docker)
 
+- [A useful Stackoverflow entry on loading data locally in MySQL](https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client)
+
 ## Local set-up
 
 - copy the file for chapter 1 the Docker volume directory
