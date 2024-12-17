@@ -44,3 +44,41 @@ CREATE TABLE employees (
 ```sql
 LOAD DATA LOCAL INFILE 'var/lib/mysql/bartholomew-ch01.csv' INTO TABLE employees FIELDS TERMINATED BY ',';
 ```
+
+## Local install of the _mysql-client_ client
+
+"It is possible to connect to the MySQL server outside the container, as well. For example, to connect from your host machine, you can install the MySQL client manually in your system."
+
+
+- Update apt and install the mysql-client
+
+```sh
+sudo apt update
+sudo apt install mysql-client
+```
+
+- Check the port mappings
+
+```sh
+docker port mysql-db
+```
+
+- Connect to the MySQL server from the local client
+
+```sh
+mysql --host=127.0.0.1 --port=3306 -u root -p
+```
+
+## Removing double quotes from strings in all columns of the new table
+
+For some reason, each text value in the VARCHAR columns is encloses in double quotes so to run a query to for example get all rows where the title is 'hr', requires the following:
+
+```sql
+select * from employees where title = '"hr"';
+```
+
+To fix this, the following update was run for each of the three VARCHAR columns:
+
+```sql
+UPDATE employees SET title = REPLACE(title, '"', ''); -- repeated for columns name and office
+```
